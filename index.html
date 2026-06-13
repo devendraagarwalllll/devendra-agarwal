@@ -1,317 +1,134 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Devendra Agarwal — Content Strategist & Copywriter</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
---accent: #D93800;
---dark:   #111111;
---mid:    #555555;
---muted:  #999999;
---border: #E8E8E8;
---bg:     #FFFFFF;
---surface:#F7F7F7;
-}
-html { scroll-behavior: smooth; }
 body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #FFFFFF 0%, #F9F4F1 100%); color: var(--dark); line-height: 1.6; font-size: 16px; }
 
 /* NAV - MINIMAL */
 nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 14px 60px; display: flex; justify-content: space-between; align-items: center; }
+nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); padding: 14px 60px; display: flex; justify-content: space-between; }
 .nav-menu { display: flex; gap: 28px; align-items: center; }
 .nav-link { font-size: 13px; color: var(--mid); text-decoration: none; font-weight: 500; transition: color 0.2s; }
 .nav-link:hover, .nav-link.active { color: var(--accent); }
-.nav-email { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; border: 1px solid var(--accent); padding: 7px 14px; border-radius: 6px; transition: all 0.2s; }
-.nav-email:hover { background: var(--accent); color: white; }
-
-.hero { padding: 120px 60px 80px; max-width: 1100px; margin: 0 auto; }
-.hero-name { font-family: 'Space Grotesk', sans-serif; font-size: clamp(56px, 8vw, 84px); font-weight: 800; letter-spacing: -2px; line-height: 1.05; color: var(--dark); margin-bottom: 24px; }
-.hero-subtitle { font-family: 'Space Grotesk', sans-serif; font-size: clamp(18px, 2.5vw, 24px); font-weight: 700; color: var(--mid); letter-spacing: -0.5px; margin-bottom: 16px; }
-.hero-tagline { font-size: 17px; color: var(--mid); max-width: 600px; line-height: 1.8; margin-bottom: 36px; }
-.hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 80px; }
-.cta-primary { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 6px; text-decoration: none; background: var(--accent); color: white; transition: all 0.2s; }
-.cta-primary:hover { opacity: 0.88; transform: translateY(-2px); }
-.cta-secondary { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: 6px; text-decoration: none; border: 1px solid var(--border); color: var(--dark); transition: all 0.2s; }
-.cta-secondary:hover { border-color: var(--dark); background: var(--surface); }
-
-.stats-banner { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 48px 60px; background: linear-gradient(135deg, #F9F4F1 0%, #F7F7F7 100%); }
-.stats-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
-.stat { padding: 0 40px 0 0; }
-.stat-number { font-family: 'Space Grotesk', sans-serif; font-size: 38px; font-weight: 800; color: var(--dark); letter-spacing: -1px; margin-bottom: 6px; }
-.stat-number .accent { color: var(--accent); }
-.stat-label { font-size: 12px; color: var(--muted); font-weight: 500; }
-
-.section { max-width: 1100px; margin: 0 auto; padding: 72px 60px; }
-.section-header { margin-bottom: 48px; }
-.section-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 600; margin-bottom: 10px; }
-.section-title { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 40px); font-weight: 800; letter-spacing: -1px; color: var(--dark); }
-.section-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-
-/* MY STORY SECTION */
-.story-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
-.story-text h3 { font-family: 'Space Grotesk', sans-serif; font-size: 18px; font-weight: 700; margin-bottom: 16px; color: var(--dark); }
-.story-text p { font-size: 15px; color: var(--mid); line-height: 1.8; margin-bottom: 20px; }
-.story-text strong { color: var(--dark); font-weight: 700; }
-.story-highlights { display: flex; flex-direction: column; gap: 20px; }
-.highlight-card { background: var(--surface); padding: 20px; border-radius: 8px; border-left: 3px solid var(--accent); }
-.highlight-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
-.highlight-card p { font-size: 13px; color: var(--mid); }
-
-/* EXPERTISE SECTION */
-.expertise-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-.expertise-card { background: var(--surface); padding: 28px; border-radius: 10px; border: 1px solid var(--border); }
-.expertise-icon { font-size: 32px; margin-bottom: 16px; }
-.expertise-card h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
-.expertise-card p { font-size: 13px; color: var(--mid); line-height: 1.6; }
-
-/* TOOLS SECTION */
-.tools-wrapper { margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--border); }
-.tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
-.tool-category h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
-.tool-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag { background: var(--surface); color: var(--dark); padding: 7px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid var(--border); }
-
-/* WORK SECTION */
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-.dk-showcase { display: flex; flex-direction: column; gap: 0; }
-.dk-image-container { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--surface); border-radius: 12px 12px 0 0; border: 1px solid var(--border); border-bottom: none; }
-.dk-image-container img { width: 100%; height: 100%; object-fit: cover; }
-.dk-info { padding: 32px; background: linear-gradient(135deg, #FFFAF8 0%, #FFF6F3 100%); border: 1px solid var(--border); border-top: none; border-radius: 0 0 12px 12px; }
-.dk-info h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
-.dk-info p { font-size: 13px; color: var(--mid); line-height: 1.6; margin-bottom: 16px; }
-.dk-metrics { display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: var(--muted); }
+@@ -86,17 +86,17 @@
 .dk-link { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; }
 .dk-link:hover { text-decoration: underline; }
 
 .reel-container { background: linear-gradient(135deg, #E8F4F8 0%, #F0F8FB 100%); border-radius: 12px; padding: 24px; border: 1px solid #D1E8F0; }
+.reel-container { background: linear-gradient(135deg, #E8F4F8 0%, #F0F8FB 100%); border-radius: 12px; padding: 24px; border: 1px solid #D1E8F0; display: flex; flex-direction: column; }
 .reel-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
 .reel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: center; }
+.reel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
 .reel-video { width: 100%; aspect-ratio: 9/16; border-radius: 8px; overflow: hidden; background: black; }
 .reel-video iframe { width: 100%; height: 100%; border: none; }
 .reel-text { display: flex; flex-direction: column; gap: 12px; }
+.reel-text { display: flex; flex-direction: column; gap: 12px; justify-content: flex-start; }
 .reel-text h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); }
 .reel-text p { font-size: 13px; color: var(--mid); line-height: 1.6; }
 .reel-tag { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; width: fit-content; }
 
 .yt-metrics { background: linear-gradient(135deg, #F3E8FF 0%, #FAF1FF 100%); padding: 24px; border-radius: 12px; border: 1px solid #E8D5FF; margin-top: 24px; }
+.yt-metrics { background: linear-gradient(135deg, #F3E8FF 0%, #FAF1FF 100%); padding: 24px; border-radius: 12px; border: 1px solid #E8D5FF; margin-top: 0; }
 .yt-metrics h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
 .metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 .metric-item { background: white; padding: 12px 14px; border-radius: 6px; }
-.metric-label { font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 600; margin-bottom: 4px; letter-spacing: 0.5px; }
-.metric-value { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 800; color: var(--accent); }
+@@ -105,11 +105,11 @@
 .yt-script { font-size: 12px; color: var(--mid); line-height: 1.6; font-style: italic; padding: 12px; background: white; border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
 
 /* YOUTUBE THUMBNAILS */
 .yt-project { margin-top: 64px; padding-top: 64px; border-top: 1px solid var(--border); }
+.yt-section { margin-top: 40px; }
 .yt-project-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
 .yt-project-desc { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 28px; max-width: 600px; }
 .thumbnail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .thumb-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; cursor: pointer; transition: all 0.2s; }
+.thumb-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .thumb-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(217, 56, 0, 0.1); }
 .thumb-image { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--surface); }
 .thumb-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-.thumb-card:hover .thumb-image img { transform: scale(1.05); }
-.thumb-title { padding: 12px; font-size: 12px; font-weight: 600; color: var(--dark); text-align: center; }
-
+@@ -119,7 +119,7 @@
 /* ACHIEVEMENTS */
 .achievements-section { margin-top: 72px; padding-top: 72px; border-top: 1px solid var(--border); }
 .achieve-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .achieve-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; position: relative; transition: all 0.2s; }
+.achieve-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; position: relative; }
 .achieve-card:hover { transform: translateY(-4px); }
 .achieve-image { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--surface); filter: blur(4px); }
 .achieve-image img { width: 100%; height: 100%; object-fit: cover; filter: blur(4px); }
-.achieve-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); }
-.achieve-content { padding: 12px; text-align: center; }
-.achieve-name { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: var(--dark); }
-.achieve-label { font-size: 11px; color: var(--muted); margin-top: 6px; }
-
-.contact-section { border-top: 1px solid var(--border); padding: 72px 60px; max-width: 1100px; margin: 0 auto; }
-.contact-heading { font-family: 'Space Grotesk', sans-serif; font-size: clamp(28px, 3.5vw, 42px); font-weight: 800; letter-spacing: -1px; line-height: 1.3; color: var(--dark); margin-bottom: 32px; }
-.contact-heading .accent { color: var(--accent); }
-.contact-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-.contact-link { font-size: 15px; color: var(--mid); text-decoration: none; display: flex; align-items: center; gap: 12px; font-weight: 500; padding: 12px 0; transition: color 0.2s; }
-.contact-link:hover { color: var(--accent); }
-
-footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); background: var(--surface); }
-
-@media (max-width: 768px) {
-nav, .hero, .section, .contact-section { padding-left: 20px; padding-right: 20px; }
-nav { padding: 12px 20px; }
-.nav-menu { gap: 16px; }
-.stats-container { grid-template-columns: repeat(2, 1fr); }
-.story-container { grid-template-columns: 1fr; gap: 40px; }
-.expertise-grid { grid-template-columns: 1fr; }
-.tools-grid { grid-template-columns: 1fr; }
-.project-grid { grid-template-columns: 1fr; }
-.reel-grid { grid-template-columns: 1fr; }
-.thumbnail-grid { grid-template-columns: repeat(2, 1fr); }
-.achieve-grid { grid-template-columns: repeat(2, 1fr); }
-.contact-links { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-nav { padding: 10px 12px; }
-.hero { padding: 60px 12px 40px; }
-.stats-container { grid-template-columns: 1fr; }
-.thumbnail-grid { grid-template-columns: 1fr; }
-.achieve-grid { grid-template-columns: 1fr; }
-.expertise-grid { grid-template-columns: 1fr; }
-}
-</style>
-</head>
-<body>
-
-<!-- NAVIGATION -->
-<nav>
-<div class="nav-menu">
-<a href="#work" class="nav-link">Work</a>
-    <a href="#expertise" class="nav-link">Expertise</a>
-<a href="#achievements" class="nav-link">Achievements</a>
-<a href="#contact" class="nav-link">About</a>
-</div>
-@@ -251,39 +250,6 @@
-
-<hr class="section-divider">
-
-<!-- EXPERTISE SECTION -->
-<section class="section" id="expertise">
-  <div class="section-header">
-    <div class="section-label">Core Competencies</div>
-    <h2 class="section-title">What I Do</h2>
-  </div>
-
-  <div class="expertise-grid">
-    <div class="expertise-card">
-      <div class="expertise-icon">📋</div>
-      <h4>Content Strategy</h4>
-      <p>Audience-first planning, editorial calendars, and multi-channel distribution strategies that drive sustainable growth.</p>
-    </div>
-    <div class="expertise-card">
-      <div class="expertise-icon">✍️</div>
-      <h4>Copywriting</h4>
-      <p>Conversion-focused copy for social media, articles, email campaigns, and brand messaging. SEO-optimized and audience-driven.</p>
-    </div>
-    <div class="expertise-card">
-      <div class="expertise-icon">📈</div>
-      <h4>Analytics & Growth</h4>
-      <p>Data-driven decision making, performance metrics, engagement optimization, and growth hacking through content.</p>
-    </div>
-    <div class="expertise-card">
-      <div class="expertise-icon">🎤</div>
-      <h4>Brand Voice</h4>
-      <p>Building consistent brand voice across platforms. Complex legal and technical content simplified for general audiences.</p>
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- WORK SECTION -->
-<section class="section" id="work">
-<div class="section-header">
-@@ -403,8 +369,8 @@
-<div class="achieve-overlay"></div>
-</div>
-<div class="achieve-content">
-        <div class="achieve-name">IIML MBA</div>
-        <div class="achieve-label">Bangalore</div>
-        <div class="achieve-name">IIML</div>
-        <div class="achieve-label">MBA Bangalore</div>
-</div>
-</a>
-
-@@ -415,8 +381,8 @@
-<div class="achieve-overlay"></div>
-</div>
-<div class="achieve-content">
-        <div class="achieve-name">Top 8 of 483</div>
-        <div class="achieve-label">Competition</div>
-        <div class="achieve-name">IIT Lucknow</div>
-        <div class="achieve-label">Top 8 of 483</div>
-</div>
-</a>
-
-@@ -427,13 +393,44 @@
-<div class="achieve-overlay"></div>
-</div>
-<div class="achieve-content">
-        <div class="achieve-name">1st Place</div>
-        <div class="achieve-label">Certification</div>
-        <div class="achieve-name">QCI</div>
-        <div class="achieve-label">1st Place</div>
-</div>
-</a>
+@@ -223,7 +223,7 @@ <h2 class="section-title">My Story</h2>
+<div class="story-container">
+<div class="story-text">
+<h3>I'm an <strong>MBA candidate in Marketing & Analytics at IIIT Lucknow</strong>, with a passion for turning complex ideas into compelling copy.</h3>
+      <p>Since 2021, I've written <strong>500+ pieces of content</strong> — from legal articles to social captions, video scripts, and brand messaging. I work with the understanding that <strong>every word must earn its place</strong>.</p>
+      <p>Since 2021, I've written <strong>500+ pieces of content</strong> — from legal articles to social captions, video scripts, and brand messaging. I work with the understanding that <strong>every word serves the audience first.</strong></p>
+<p>As sole content manager at <strong>Desi Kaanoon (100K followers ✓)</strong>, I drove <strong>200% engagement growth</strong> and 3x organic reach while making Supreme Court rulings accessible to millions.</p>
 </div>
 
-  <!-- TOOLS SECTION MOVED HERE -->
-  <!-- EXPERTISE SECTION - MOVED BELOW ACHIEVEMENTS -->
-  <div class="tools-wrapper">
-    <div class="section-header">
-      <div class="section-label">Core Competencies</div>
-      <h3 class="section-title">What I Do</h3>
-    </div>
+@@ -275,37 +275,22 @@ <h3>Desi Kaanoon</h3>
+</div>
+</div>
 
-    <div class="expertise-grid">
-      <div class="expertise-card">
-        <div class="expertise-icon">📋</div>
-        <h4>Content Strategy</h4>
-        <p>Audience-first planning, editorial calendars, and multi-channel distribution strategies that drive sustainable growth.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon">✍️</div>
-        <h4>Copywriting</h4>
-        <p>Conversion-focused copy for social media, articles, email campaigns, and brand messaging. SEO-optimized and audience-driven.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon">📈</div>
-        <h4>Analytics & Growth</h4>
-        <p>Data-driven decision making, performance metrics, engagement optimization, and growth hacking through content.</p>
-      </div>
-      <div class="expertise-card">
-        <div class="expertise-icon">🎤</div>
-        <h4>Brand Voice</h4>
-        <p>Building consistent brand voice across platforms. Complex legal and technical content simplified for general audiences.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- TOOLS SECTION - MOVED BELOW ACHIEVEMENTS -->
-<div class="tools-wrapper">
-<div class="section-header">
-<div class="section-label">Toolkit</div>
-@@ -471,18 +468,25 @@
-
-<!-- CONTACT SECTION -->
-<section class="contact-section" id="contact">
-  <h2 class="contact-heading">Let's <span class="accent">Connect</span></h2>
-  <div class="contact-links">
-    <a href="mailto:devendra.agarwal2002@gmail.com" class="contact-link">✉ Email Me</a>
-    <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="contact-link">📸 Desi Kaanoon</a>
-    <a href="https://www.youtube.com/@desikaanoon/" target="_blank" class="contact-link">🎬 YouTube Channel</a>
-    <a href="https://github.com/devendraagarwalllll" target="_blank" class="contact-link">💻 GitHub</a>
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+    <!-- RIGHT: REEL + YOUTUBE -->
     <div>
-      <h2 class="contact-heading">Let's <span class="accent">create</span><br>something<br>impactful.</h2>
-    </div>
-    <div>
-      <div class="contact-links" style="display: flex; flex-direction: column; gap: 20px;">
-        <a href="mailto:devendra.agarwal2002@gmail.com" class="contact-link">✉ devendra.agarwal2002@gmail.com</a>
-        <a href="tel:+919473738606" class="contact-link">📱 +91-9473738606</a>
-        <a href="https://linkedin.com/in/devendra-agarwal" target="_blank" class="contact-link">💼 linkedin.com/in/devendra-agarwal</a>
-        <a href="https://www.instagram.com/desikaanoon/" target="_blank" class="contact-link">📸 @desikaanoon (100K)</a>
-      </div>
-    </div>
+      <div class="reel-container">
+        <div class="reel-title">Featured Reel</div>
+        <div class="reel-grid">
+          <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/C3XaLKSLOrk/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/reel/C3XaLKSLOrk/?utm_source=ig_embed&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-11.000000, -11.000000)" fill="#000000"><g><path d="M41,30c0,5.523 -4.477,10 -10,10 C25.477,40 21,35.523 21,30 C21,24.477 25.477,20 31,20 C36.523,20 41,24.477 41,30 Z"></path><path d="M11,0 L59,0 C59.552,0 60,0.448 60,1 L60,59 C60,59.552 59.552,60 59,60 L11,60 C10.448,60 10,59.552 10,59 L10,1 C10,0.448 10.448,0 11,0 Z M54,30 C54,22.268 48.627,15.749 41.581,14.43 C40.659,21.311 34.616,26.5 27.5,26.5 C20.384,26.5 14.341,21.311 13.419,14.43 C6.373,15.749 1,22.268 1,30 L1,54 L54,54 L54,30 Z"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">View this post on Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a></div></blockquote>
+          <script async src="//www.instagram.com/embed.js"></script>
+          <div class="reel-text">
+            <span class="reel-tag">Viral Content</span>
+            <h4>High-Impact Legal Content</h4>
+            <p>Short-form reels designed to educate and engage. Every piece crafted for maximum reach and shareability.</p>
+            <p style="font-size: 12px; color: var(--muted);">Organic growth • Zero paid promotion • Community-driven</p>
+          </div>
+    <!-- RIGHT: REEL + METRICS -->
+    <div class="reel-container">
+      <div class="reel-title">Featured Reel</div>
+      <div class="reel-grid">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/C3XaLKSLOrk/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14">
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+        <div class="reel-text">
+          <span class="reel-tag">Viral Content</span>
+          <h4>High-Impact Legal Content</h4>
+          <p>Short-form reels designed to educate and engage. Every piece crafted for maximum reach and shareability.</p>
+          <p style="font-size: 12px; color: var(--muted);">Organic growth • Zero paid promotion • Community-driven</p>
 </div>
-</section>
+</div>
 
-<!-- FOOTER -->
-<footer>
-  <p>Designed & built by Devendra Agarwal. All content © 2024. Crafted with precision.</p>
-  <p>© 2025 Devendra Agarwal | Content Strategist & Copywriter</p>
-  <p>All work is live and linked above.</p>
-</footer>
+      
 
-</body>
+  <!-- YOUTUBE PROJECT -->
+  <div class="yt-project">
+    <h3 class="yt-project-title">YouTube — Thumbnail Design & Strategy</h3>
+    <p class="yt-project-desc">2+ years building audience-first video content. Every thumbnail designed, scripted, and optimized for CTR. Zero paid promotion — all organic growth.</p>
+    
+    <div class="thumbnail-grid">
+      <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail.jpg" target="_blank" class="thumb-card">
+        <div class="thumb-image">
+          <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail.jpg" alt="Thumbnail 1">
+        </div>
+        <div class="thumb-title">Thumbnail Design 1</div>
+      </a>
+<div class="yt-metrics">
+      <div class="yt-metrics" style="margin-top: 20px;">
+<h4>My YouTube Channel</h4>
+<div class="metric-grid">
+<div class="metric-item">
+@@ -323,6 +308,20 @@ <h4>My YouTube Channel</h4>
+</div>
+</div>
+</div>
+
+  <!-- YOUTUBE THUMBNAILS SECTION -->
+  <div class="yt-section">
+    <h3 class="yt-project-title">YouTube — Thumbnail Design & Strategy</h3>
+    <p class="yt-project-desc">2+ years building audience-first video content. Every thumbnail designed, scripted, and optimized for CTR. Zero paid promotion — all organic growth.</p>
+    
+    <div class="thumbnail-grid">
+      <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail.jpg" target="_blank" class="thumb-card">
+        <div class="thumb-image">
+          <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail.jpg" alt="Thumbnail 1">
+        </div>
+        <div class="thumb-title">Thumbnail Design 1</div>
+      </a>
+
+<a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail%20MLM.png" target="_blank" class="thumb-card">
+<div class="thumb-image">
+<img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail%20MLM.png" alt="Thumbnail MLM">
