@@ -1,4 +1,4 @@
-@@ -1,81 +1,81 @@
+@@ -1,75 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,225 +70,207 @@ nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-fil
 
 /* TOOLS SECTION */
 .tools-wrapper { margin-top: 60px; padding-top: 60px; border-top: 1px solid var(--border); }
+.tools-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; }
 .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 .tool-category h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
 .tool-tags { display: flex; flex-wrap: wrap; gap: 8px; }
 .tag { background: var(--surface); color: var(--dark); padding: 7px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; border: 1px solid var(--border); }
-
-/* WORK SECTION */
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-.project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: stretch; }
-.dk-showcase { display: flex; flex-direction: column; gap: 0; }
-.dk-image-container { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--surface); border-radius: 12px 12px 0 0; border: 1px solid var(--border); border-bottom: none; }
-.dk-image-container img { width: 100%; height: 100%; object-fit: cover; }
-@@ -86,13 +86,14 @@
+@@ -86,28 +86,27 @@
 .dk-link { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; }
 .dk-link:hover { text-decoration: underline; }
 
+.reel-container { background: linear-gradient(135deg, #E8F4F8 0%, #F0F8FB 100%); border-radius: 12px; padding: 24px; border: 1px solid #D1E8F0; display: flex; flex-direction: column; }
+.reel-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+.reel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+.reel-video { width: 100%; aspect-ratio: 9/16; border-radius: 8px; overflow: hidden; background: black; }
 .reel-container { display: flex; flex-direction: column; gap: 16px; }
 .reel-card { background: linear-gradient(135deg, #E8F4F8 0%, #F0F8FB 100%); border-radius: 12px; padding: 16px; border: 1px solid #D1E8F0; display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .reel-video { width: 100%; aspect-ratio: 1/1; border-radius: 8px; overflow: hidden; background: black; max-width: 180px; }
 .reel-video iframe { width: 100%; height: 100%; border: none; }
+.reel-text { display: flex; flex-direction: column; gap: 12px; justify-content: flex-start; }
+.reel-text h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); }
+.reel-text p { font-size: 13px; color: var(--mid); line-height: 1.6; }
 .reel-tag { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; width: fit-content; }
 .reel-text h4 { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: var(--dark); margin: 0; }
 .reel-text p { font-size: 12px; color: var(--mid); line-height: 1.5; margin: 0; }
-.reel-container { display: flex; flex-direction: column; gap: 0; }
-.reel-video-wrapper { width: 100%; aspect-ratio: 16/9; border-radius: 12px 12px 0 0; overflow: hidden; background: black; border: 1px solid var(--border); border-bottom: none; }
-.reel-video-wrapper iframe { width: 100%; height: 100%; border: none; }
-.reel-info { padding: 32px; background: linear-gradient(135deg, #E8F4F8 0%, #F0F8FB 100%); border: 1px solid #D1E8F0; border-top: none; border-radius: 0 0 12px 12px; }
-.reel-info h3 { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
-.reel-tag { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; width: fit-content; margin-bottom: 12px; }
-.reel-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
-.reel-subtext { font-size: 12px; color: var(--muted); margin-top: 12px; font-style: italic; }
 
+.yt-metrics { background: linear-gradient(135deg, #F3E8FF 0%, #FAF1FF 100%); padding: 24px; border-radius: 12px; border: 1px solid #E8D5FF; margin-top: 0; }
+.yt-metrics h4 { font-family: 'Space Grotesk', sans-serif; font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 16px; }
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.metric-item { background: white; padding: 12px 14px; border-radius: 6px; }
+.metric-label { font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 600; margin-bottom: 4px; letter-spacing: 0.5px; }
+.metric-value { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 800; color: var(--accent); }
+.yt-script { font-size: 12px; color: var(--mid); line-height: 1.6; font-style: italic; padding: 12px; background: white; border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
 .yt-metrics { background: linear-gradient(135deg, #F3E8FF 0%, #FAF1FF 100%); padding: 20px; border-radius: 12px; border: 1px solid #E8D5FF; }
 .yt-metrics h4 { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
-@@ -103,12 +104,11 @@
+.metric-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.metric-item { background: white; padding: 10px 12px; border-radius: 6px; }
+.metric-label { font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 600; margin-bottom: 3px; letter-spacing: 0.5px; }
+.metric-value { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 800; color: var(--accent); }
 .yt-script { font-size: 11px; color: var(--mid); line-height: 1.5; font-style: italic; padding: 10px; background: white; border-left: 3px solid var(--accent); border-radius: 0 4px 4px 0; }
 
 /* YOUTUBE THUMBNAILS */
 .yt-section { margin-top: 40px; }
-.yt-heading-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; margin-top: 60px; margin-bottom: 28px; padding-top: 60px; border-top: 1px solid var(--border); }
-.yt-heading-content { flex: 1; }
 .yt-project-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
 .yt-project-desc { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 28px; max-width: 600px; }
-.yt-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; margin-bottom: 28px; }
-.yt-header-content { flex: 1; }
+.yt-header { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; margin-bottom: 28px; }
 .thumbnail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.yt-project-desc { font-size: 14px; color: var(--mid); line-height: 1.7; }
-.thumbnail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
 .thumb-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .thumb-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(217, 56, 0, 0.1); }
-.thumb-image { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--surface); }
-@@ -149,7 +149,7 @@
+@@ -121,8 +120,8 @@
+.achieve-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.achieve-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; position: relative; }
+.achieve-card:hover { transform: translateY(-4px); }
+.achieve-image { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--surface); filter: blur(4px); }
+.achieve-image img { width: 100%; height: 100%; object-fit: cover; filter: blur(4px); }
+.achieve-image { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--surface); }
+.achieve-image img { width: 100%; height: 100%; object-fit: cover; }
+.achieve-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.3); }
+.achieve-content { padding: 12px; text-align: center; }
+.achieve-name { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; color: var(--dark); }
+@@ -144,12 +143,12 @@
+  .stats-container { grid-template-columns: repeat(2, 1fr); }
+  .story-container { grid-template-columns: 1fr; gap: 40px; }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-grid { grid-template-columns: 1fr; }
+  .reel-grid { grid-template-columns: 1fr; }
   .thumbnail-grid { grid-template-columns: repeat(2, 1fr); }
   .achieve-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-links { grid-template-columns: 1fr; }
-  .yt-header { flex-direction: column; }
-  .yt-heading-row { flex-direction: column; }
+  .yt-header { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 480px) {
-@@ -276,70 +276,65 @@
+@@ -159,6 +158,7 @@
+  .thumbnail-grid { grid-template-columns: 1fr; }
+  .achieve-grid { grid-template-columns: 1fr; }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .tools-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+@@ -275,22 +275,22 @@
       </div>
     </div>
 
+    <!-- RIGHT: REEL + METRICS -->
     <!-- RIGHT: COMPACT REEL -->
-    <!-- RIGHT: REEL -->
     <div class="reel-container">
+      <div class="reel-title">Featured Reel</div>
+      <div class="reel-grid">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/C3XaLKSLOrk/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14">
+        </blockquote>
       <div class="reel-card">
         <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/C3XaLKSLOrk/?utm_source=ig_embed&utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 0; max-width:180px; min-width:180px; padding:0; width:100%;"></blockquote>
         <script async src="//www.instagram.com/embed.js"></script>
+        <div class="reel-text">
         <div>
           <span class="reel-tag">Viral Content</span>
+          <h4>High-Impact Legal Content</h4>
+          <p>Short-form reels designed to educate and engage. Every piece crafted for maximum reach and shareability.</p>
+          <p style="font-size: 12px; color: var(--muted);">Organic growth • Zero paid promotion • Community-driven</p>
           <div class="reel-text">
             <h4>High-Impact Legal Content</h4>
             <p>Short-form reels designed to educate and engage. Every piece crafted for maximum reach and shareability.</p>
             <p style="font-size: 11px; color: var(--muted); margin-top: 8px;">Organic growth • Zero paid promotion • Community-driven</p>
           </div>
         </div>
-      <div class="reel-video-wrapper">
-        <iframe src="https://www.instagram.com/reel/C3XaLKSLOrk/embed" width="100%" height="100%" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
       </div>
-      <div class="reel-info">
-        <span class="reel-tag">Viral Content</span>
-        <h3>Featured Reel</h3>
-        <p class="reel-desc">Short-form reels designed to educate and engage. Every piece crafted for maximum reach and shareability.</p>
-        <p class="reel-subtext">Organic growth • Zero paid promotion • Community-driven</p>
+
+      <div class="yt-metrics" style="margin-top: 20px;">
+      <div class="yt-metrics">
+        <h4>My YouTube Channel</h4>
+        <div class="metric-grid">
+          <div class="metric-item">
+@@ -303,16 +303,20 @@
+          </div>
+        </div>
+        <div class="yt-script">
+          <strong>Content Strategy:</strong> Every video optimized for audience retention. Scripts, thumbnails, and CTAs crafted to maximize engagement and growth.
+          <strong>Content Strategy:</strong> Every video optimized for audience retention. Scripts, thumbnails, and CTAs crafted to maximize engagement.
+        </div>
       </div>
     </div>
   </div>
 
   <!-- YOUTUBE THUMBNAILS SECTION -->
   <div class="yt-section">
+    <h3 class="yt-project-title">YouTube — Thumbnail Design & Strategy</h3>
+    <p class="yt-project-desc">2+ years building audience-first video content. Every thumbnail designed, scripted, and optimized for CTR. Zero paid promotion — all organic growth.</p>
     <div class="yt-header">
-      <div class="yt-header-content">
+      <div>
         <h3 class="yt-project-title">YouTube — Thumbnail Design & Strategy</h3>
         <p class="yt-project-desc">2+ years building audience-first video content. Every thumbnail designed, scripted, and optimized for CTR. Zero paid promotion — all organic growth.</p>
       </div>
-      <div class="yt-metrics">
-        <h4>My YouTube Channel</h4>
-        <div class="metric-grid">
-          <div class="metric-item">
-            <div class="metric-label">Channel Views</div>
-            <div class="metric-value">560K+</div>
-          </div>
-          <div class="metric-item">
-            <div class="metric-label">Watch Hours</div>
-            <div class="metric-value">1.4K</div>
-          </div>
-  <div class="yt-heading-row">
-    <div class="yt-heading-content">
-      <h3 class="yt-project-title">YouTube — Thumbnail Design & Strategy</h3>
-      <p class="yt-project-desc">2+ years building audience-first video content. Every thumbnail designed, scripted, and optimized for CTR. Zero paid promotion — all organic growth.</p>
     </div>
-    <div class="yt-metrics">
-      <h4>My YouTube Channel</h4>
-      <div class="metric-grid">
-        <div class="metric-item">
-          <div class="metric-label">Channel Views</div>
-          <div class="metric-value">560K+</div>
-        </div>
-        <div class="yt-script">
-          <strong>Content Strategy:</strong> Every video optimized for audience retention. Scripts, thumbnails, and CTAs crafted to maximize engagement.
-        <div class="metric-item">
-          <div class="metric-label">Watch Hours</div>
-          <div class="metric-value">1.4K</div>
-        </div>
-      </div>
-      <div class="yt-script">
-        <strong>Content Strategy:</strong> Every video optimized for audience retention. Scripts, thumbnails, and CTAs crafted to maximize engagement.
-      </div>
-    </div>
-    
+
     <div class="thumbnail-grid">
       <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail.jpg" target="_blank" class="thumb-card">
-        <div class="thumb-image">
-          <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail.jpg" alt="Thumbnail 1">
-        </div>
-        <div class="thumb-title">Thumbnail Design 1</div>
-      </a>
+@@ -398,7 +402,7 @@
+    </a>
   </div>
-  
-  <div class="thumbnail-grid">
-    <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail.jpg" target="_blank" class="thumb-card">
-      <div class="thumb-image">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail.jpg" alt="Thumbnail 1">
-      </div>
-      <div class="thumb-title">Thumbnail Design 1</div>
-    </a>
 
-      <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail%20MLM.png" target="_blank" class="thumb-card">
-        <div class="thumb-image">
-          <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail%20MLM.png" alt="Thumbnail MLM">
-        </div>
-        <div class="thumb-title">MLM Debunked</div>
-      </a>
-    <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail%20MLM.png" target="_blank" class="thumb-card">
-      <div class="thumb-image">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/Thumbnail%20MLM.png" alt="Thumbnail MLM">
+  <!-- EXPERTISE SECTION - MOVED BELOW ACHIEVEMENTS -->
+  <!-- EXPERTISE SECTION -->
+  <div class="tools-wrapper">
+    <div class="section-header">
+      <div class="section-label">Core Competencies</div>
+@@ -426,13 +430,23 @@
+        <h4>Brand Voice</h4>
+        <p>Building consistent brand voice across platforms. Complex legal and technical content simplified for general audiences.</p>
       </div>
-      <div class="thumb-title">MLM Debunked</div>
-    </a>
-
-      <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/ASLI%20SACHH.png" target="_blank" class="thumb-card">
-        <div class="thumb-image">
-          <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/ASLI%20SACHH.png" alt="Asli Sachh">
-        </div>
-        <div class="thumb-title">Asli Sachh</div>
-      </a>
+      <div class="expertise-card">
+        <div class="expertise-icon">🎬</div>
+        <h4>Video Production</h4>
+        <p>End-to-end video content creation including scripting, editing, thumbnail design, and optimization for maximum CTR.</p>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-icon">🔍</div>
+        <h4>SEO & Performance</h4>
+        <p>Keyword research, on-page optimization, and performance tracking to ensure content ranks and converts effectively.</p>
+      </div>
     </div>
-    <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/ASLI%20SACHH.png" target="_blank" class="thumb-card">
-      <div class="thumb-image">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/ASLI%20SACHH.png" alt="Asli Sachh">
-      </div>
-      <div class="thumb-title">Asli Sachh</div>
-    </a>
-  </div>
-</section>
-
-@@ -353,36 +348,36 @@
   </div>
 
-  <div class="achieve-grid">
-    <!-- LOR - IIM Bangalore -->
-    <!-- LOR -->
-    <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/LOR.png" target="_blank" class="achieve-card">
-      <div class="achieve-image">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/LOR.png" alt="Letter of Recommendation">
-      </div>
-      <div class="achieve-content">
-        <div class="achieve-name">Letter of Recommendation</div>
-        <div class="achieve-label">IIM Bangalore</div>
-        <div class="achieve-label">Reference</div>
-      </div>
-    </a>
+  <!-- TOOLS SECTION - MOVED BELOW ACHIEVEMENTS -->
+  <!-- TOOLS SECTION -->
+  <div class="tools-wrapper">
+    <div class="section-header">
+      <div class="section-label">Toolkit</div>
+      <div class="section-label">Toolkit & Skills</div>
+      <h3 class="section-title">Tools & Platforms</h3>
+    </div>
 
-    <!-- IIML - National Case Study Competition -->
-    <!-- IIML -->
-    <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIML.jpeg" target="_blank" class="achieve-card">
-      <div class="achieve-image">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIML.jpeg" alt="IIML National Case Study">
+@@ -446,17 +460,29 @@
+          <span class="tag">Social Media</span>
+          <span class="tag">Email Campaigns</span>
+          <span class="tag">Video Scripts</span>
+          <span class="tag">Brand Messaging</span>
+        </div>
       </div>
-      <div class="achieve-content">
-        <div class="achieve-name">IIML</div>
-        <div class="achieve-label">National Case Study Competition</div>
-        <div class="achieve-label">Top 8 of 483</div>
+      <div class="tool-category">
+        <h4>Platforms & Tools</h4>
+        <h4>Platforms & Channels</h4>
+        <div class="tool-tags">
+          <span class="tag">YouTube</span>
+          <span class="tag">Instagram</span>
+          <span class="tag">LinkedIn</span>
+          <span class="tag">Twitter/X</span>
+          <span class="tag">TikTok</span>
+          <span class="tag">Threads</span>
+        </div>
       </div>
-    </a>
-
-    <!-- IIT -->
-    <!-- IIT DELHI -->
-    <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIT.jpeg" target="_blank" class="achieve-card">
-      <div class="achieve-image">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIT.jpeg" alt="IIT">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIT.jpeg" alt="IIT Delhi">
+      <div class="tool-category">
+        <h4>Design & Analytics Tools</h4>
+        <div class="tool-tags">
+          <span class="tag">Google Analytics</span>
+          <span class="tag">Canva</span>
+          <span class="tag">CapCut</span>
+          <span class="tag">Adobe Suite</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Semrush</span>
+        </div>
       </div>
-      <div class="achieve-content">
-        <div class="achieve-name">IIT Lucknow</div>
-        <div class="achieve-label">Top 8 of 483</div>
-        <div class="achieve-name">IIT Delhi</div>
-        <div class="achieve-label">Recognition</div>
-      </div>
-    </a>
-  </div>
+    </div>
