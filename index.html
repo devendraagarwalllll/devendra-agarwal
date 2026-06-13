@@ -106,7 +106,8 @@ nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-fil
 .yt-section { margin-top: 40px; }
 .yt-project-title { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 700; color: var(--dark); margin-bottom: 12px; }
 .yt-project-desc { font-size: 14px; color: var(--mid); line-height: 1.7; margin-bottom: 28px; max-width: 600px; }
-.yt-header { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; margin-bottom: 28px; }
+.yt-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; margin-bottom: 28px; }
+.yt-header-content { flex: 1; }
 .thumbnail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .thumb-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; cursor: pointer; transition: all 0.2s; text-decoration: none; }
 .thumb-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(217, 56, 0, 0.1); }
@@ -117,7 +118,7 @@ nav { position: sticky; top: 0; background: rgba(255,255,255,0.98); backdrop-fil
 
 /* ACHIEVEMENTS */
 .achievements-section { margin-top: 72px; padding-top: 72px; border-top: 1px solid var(--border); }
-.achieve-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.achieve-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .achieve-card { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: white; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; position: relative; }
 .achieve-card:hover { transform: translateY(-4px); }
 .achieve-image { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--surface); }
@@ -148,7 +149,7 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
   .thumbnail-grid { grid-template-columns: repeat(2, 1fr); }
   .achieve-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-links { grid-template-columns: 1fr; }
-  .yt-header { grid-template-columns: 1fr; }
+  .yt-header { flex-direction: column; }
 }
 
 @media (max-width: 480px) {
@@ -289,7 +290,16 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
+  <!-- YOUTUBE THUMBNAILS SECTION -->
+  <div class="yt-section">
+    <div class="yt-header">
+      <div class="yt-header-content">
+        <h3 class="yt-project-title">YouTube — Thumbnail Design & Strategy</h3>
+        <p class="yt-project-desc">2+ years building audience-first video content. Every thumbnail designed, scripted, and optimized for CTR. Zero paid promotion — all organic growth.</p>
+      </div>
       <div class="yt-metrics">
         <h4>My YouTube Channel</h4>
         <div class="metric-grid">
@@ -305,16 +315,6 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
         <div class="yt-script">
           <strong>Content Strategy:</strong> Every video optimized for audience retention. Scripts, thumbnails, and CTAs crafted to maximize engagement.
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- YOUTUBE THUMBNAILS SECTION -->
-  <div class="yt-section">
-    <div class="yt-header">
-      <div>
-        <h3 class="yt-project-title">YouTube — Thumbnail Design & Strategy</h3>
-        <p class="yt-project-desc">2+ years building audience-first video content. Every thumbnail designed, scripted, and optimized for CTR. Zero paid promotion — all organic growth.</p>
       </div>
     </div>
     
@@ -353,27 +353,25 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
   </div>
 
   <div class="achieve-grid">
-    <!-- LOR -->
+    <!-- LOR - IIM Bangalore -->
     <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/LOR.png" target="_blank" class="achieve-card">
       <div class="achieve-image">
         <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/LOR.png" alt="Letter of Recommendation">
-        <div class="achieve-overlay"></div>
       </div>
       <div class="achieve-content">
         <div class="achieve-name">Letter of Recommendation</div>
-        <div class="achieve-label">Reference</div>
+        <div class="achieve-label">IIM Bangalore</div>
       </div>
     </a>
 
-    <!-- IIML -->
+    <!-- IIML - National Case Study Competition -->
     <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIML.jpeg" target="_blank" class="achieve-card">
       <div class="achieve-image">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIML.jpeg" alt="IIML MBA">
-        <div class="achieve-overlay"></div>
+        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIML.jpeg" alt="IIML National Case Study">
       </div>
       <div class="achieve-content">
         <div class="achieve-name">IIML</div>
-        <div class="achieve-label">MBA Bangalore</div>
+        <div class="achieve-label">National Case Study Competition</div>
       </div>
     </a>
 
@@ -381,23 +379,10 @@ footer { text-align: center; padding: 32px 60px; font-size: 12px; color: var(--m
     <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIT.jpeg" target="_blank" class="achieve-card">
       <div class="achieve-image">
         <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/IIT.jpeg" alt="IIT">
-        <div class="achieve-overlay"></div>
       </div>
       <div class="achieve-content">
         <div class="achieve-name">IIT Lucknow</div>
         <div class="achieve-label">Top 8 of 483</div>
-      </div>
-    </a>
-
-    <!-- QCI / Other -->
-    <a href="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/QCI.jpeg" target="_blank" class="achieve-card">
-      <div class="achieve-image">
-        <img src="https://raw.githubusercontent.com/devendraagarwalllll/devendra-agarwal/main/QCI.jpeg" alt="QCI Certification">
-        <div class="achieve-overlay"></div>
-      </div>
-      <div class="achieve-content">
-        <div class="achieve-name">QCI</div>
-        <div class="achieve-label">1st Place</div>
       </div>
     </a>
   </div>
